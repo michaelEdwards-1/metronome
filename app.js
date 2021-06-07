@@ -11,7 +11,9 @@ const measureCount = document.querySelector('.measure-count');
 
 const click1 = new Audio('click1.wav');
 const click2 = new Audio('click2.wav');
+const tanpura = new Audio('Tampura loop D.wav')
 
+tanpura.loop = true;
 let bpm = 140;
 let beatsPerMeasure = 4;
 let count = 0;
@@ -52,10 +54,12 @@ startStopBtn.addEventListener('click', () => {
     count = 0;
     if (!isRunning) {
         metronome.start();
+        tanpura.play();
         isRunning = true;
         startStopBtn.textContent = "STOP";
     } else {
         metronome.stop();
+        tanpura.pause();
         isRunning = false;
         startStopBtn.textContent = "START";
     }
